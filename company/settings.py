@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'vendor',
     'client',
     # packages
+    "corsheaders",
     "rest_framework",
     "rest_framework_simplejwt",
 ]
@@ -52,10 +53,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'company.urls'
-
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

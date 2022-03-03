@@ -22,7 +22,7 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    re_path('register/',user_registerAPIView.as_view(),name='api/register'),
+    path('register/',user_registerAPIView.as_view(),name='api/register'),
 
 
 
